@@ -41,3 +41,35 @@
 //$pre-bg: $base03;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
+
+
+
+
+/* Plain colors */
+$beonthenet-green:                      #A5AC27;
+$beonthenet-blue:                       #277AAC;
+$beonthenet-text:                       #555;
+
+/* Lighter and darker variations */
+$beonthenet-green-lighter:              lighten($beonthenet-green, 8%);
+$beonthenet-green-light:                lighten($beonthenet-green, 4%);
+$beonthenet-green-dark:                 darken($beonthenet-green, 9%);
+$beonthenet-green-darker:               darken($beonthenet-green, 18%);
+
+$beonthenet-text-little-emphasis:       lighten($beonthenet-text, 6.5%);
+$beonthenet-text-strong-emphasis:       darken($beonthenet-text, 13.5%);
+
+/* Gradients */
+$basic-beonthenet-gradient:             linear-gradient($beonthenet-green, $beonthenet-green-dark);
+$basic-beonthenet-gradient-light:       linear-gradient($beonthenet-green-light, darken($beonthenet-green, 6%));
+
+/* Shading */
+$site-outer-shadow:                    0 0 15px rgba($beonthenet-green, .25);
+
+/* Mixins */
+@mixin header-and-footer-appearance {
+  background:                           $beonthenet-green;
+  border-bottom:                        1px solid ($beonthenet-green-darker);
+  box-shadow:                           $site-outer-shadow, inset 0 -1px 1px darken($beonthenet-green, 13%);
+  @include background-image             ($basic-beonthenet-gradient);
+}

@@ -1,13 +1,20 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head.html %}
-
-<body>
-	<header id="header" class="inner">{% include header.html %}</header>
-	{% unless page.banner == false %}
-		{% include banner.html %}
-	{% endunless %}
-	<div id="content" class="inner">{{ content | expand_urls: root_url }}</div>
-	<footer id="footer" class="inner">{% include footer.html %}</footer>
-	{% include after_footer.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
+  <section id='social_networks'>{% include custom/social_networks.html %}</section>
+  <header role="banner">{% include header.html %}
+    {% include custom/global_search.html %}
+    <nav role="navigation">{% include navigation.html %}</nav>
+  </header>
+  <hr id="header_delimiter">
+  <div id="main">
+    <div id="content">
+      <h1>Blog Be on the Net</h1>
+      {{ content | expand_urls: root_url }}
+    </div>
+  </div>
+  <hr id="footer_delimiter">
+  <footer role="contentinfo">{% include footer.html %}</footer>
+  {% include after_footer.html %}
 </body>
 </html>
