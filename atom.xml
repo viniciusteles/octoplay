@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://viniciusteles.github.io/octoplay/atom.xml" rel="self"/>
+  <link href="http://viniciusteles.github.io/octoplay/"/>
+  <updated>2013-06-10T19:08:24-03:00</updated>
+  <id>http://viniciusteles.github.io/octoplay/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
